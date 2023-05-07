@@ -1,13 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 /* Importing our pages */
 import Tracks from './tracks';
 import Track from './track';
-import path from 'path';
-
-
-
 
 export default function Pages() {
   return (
@@ -16,9 +12,7 @@ export default function Pages() {
         <Route element={<Tracks />} path="/"/>
         <Route element={<Track/>} path={"track/:trackId"} />
 
-      </Routes>
-
-    
+      </Routes>    
     </BrowserRouter>
 
   );
