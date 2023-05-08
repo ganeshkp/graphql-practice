@@ -6,6 +6,8 @@ type Query {
   "Query to get tracks array for the homepagede grid"
   tracksForHome: [Track!]!
   track(id: ID!): Track
+  "Fetch a specific module, provided a module's ID"
+  module(id: ID!): Module!
 }
 
 type Mutation {
@@ -53,6 +55,12 @@ type Module{
 
   "The Module's length in minutes"
   length: Int
+
+  "The module's text-based description, can be in markdown format. In case of a video, it will be the enriched transcript"
+  content: String
+
+  "The module's video url, for video-based modules"
+  videoUrl: String
 }
 
 "Author of a complete Track"
